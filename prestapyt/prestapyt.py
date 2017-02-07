@@ -191,9 +191,10 @@ class PrestaShopWebService(object):
         request_headers.update(add_headers)
 
         if not files:
-            r = self.client.request(method, url, data=data, headers=request_headers)
+            # Quick ugly patch to avoid to verify ssl certificate until we correct this
+            r = self.client.request(method, url, data=data, headers=request_headers, verify=False)
         else:
-            r = self.client.request(method, url, files=files)
+            r = self.client.request(method, url, files=files, verify=False)
 
         if self.debug: # TODO better debug logs
             print ("Response code: %s\nResponse headers:\n%s\n"
