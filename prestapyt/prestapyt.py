@@ -249,7 +249,8 @@ class PrestaShopWebService(object):
         """
         if not isinstance(options, dict):
             raise PrestaShopWebServiceError('Parameters must be a instance of dict')
-        supported = ('filter', 'display', 'sort', 'limit', 'schema', 'date', 'date_filter')
+        # FIXME I added price on the supported key, when migrate logistiflex, make sure to commit it on mature prestapyt branch if needed
+        supported = ('filter', 'display', 'sort', 'limit', 'schema', 'date', 'date_filter', 'price')
         # filter[firstname] (as e.g.) is allowed, so check only the part before a [
         unsupported = set([param.split('[')[0] for param in options]).difference(supported)
         if unsupported:
