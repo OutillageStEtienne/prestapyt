@@ -14,7 +14,7 @@
 """
 
 __author__ = "Guewen Baconnier <guewen.baconnier@gmail.com>"
-__version__ = "0.4.0"
+__version__ = "0.6.4"
 
 import urllib
 import warnings
