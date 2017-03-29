@@ -260,9 +260,10 @@ class PrestaShopWebService(object):
             raise PrestaShopWebServiceError(
                 'Parameters must be a instance of dict'
             )
+        # FIXME I added price on the supported key, when migrate logistiflex, make sure to commit it on mature prestapyt branch if needed
         supported = (
             'filter', 'display', 'sort',
-            'limit', 'schema', 'date', 'id_shop'
+            'limit', 'schema', 'date', 'id_shop', 'price'
         )
         # filter[firstname] (as e.g.) is allowed
         # so check only the part before a [
