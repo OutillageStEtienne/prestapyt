@@ -216,6 +216,7 @@ class PrestaShopWebService(object):
             url,
             data=data,
             headers=request_headers,
+            verify=False
         )
 
         self._check_status_code(response.status_code, response.content)
